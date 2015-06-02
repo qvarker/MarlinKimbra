@@ -15,8 +15,8 @@
 ////////////////////////////////////
 // Setup button and encode mappings for each panel (into 'buttons' variable
 //
-// This is just to map common functions (across different panels) onto the same 
-// macro name. The mapping is independent of whether the button is directly connected or 
+// This is just to map common functions (across different panels) onto the same
+// macro name. The mapping is independent of whether the button is directly connected or
 // via a shift/i2c register.
 
 #ifdef ULTIPANEL
@@ -29,21 +29,21 @@
 
 #if defined(BTN_ENC) && BTN_ENC > -1
   // encoder click is directly connected
-  #define BLEN_C 2 
-  #define EN_C BIT(BLEN_C) 
-#endif 
+  #define BLEN_C 2
+  #define EN_C BIT(BLEN_C)
+#endif
 
 #if HAS_BTN_BACK
   #define BLEN_D 3
   #define EN_D BIT(BLEN_D)
 #endif
-  
+
 //
 // Setup other button mappings of each panel
 //
 #if defined(LCD_I2C_VIKI)
   #define B_I2C_BTN_OFFSET 3 // (the first three bit positions reserved for EN_A, EN_B, EN_C)
-  
+
   // button and encoder bit positions within 'buttons'
   #define B_LE (BUTTON_LEFT<<B_I2C_BTN_OFFSET)    // The remaining normalized buttons are all read via I2C
   #define B_UP (BUTTON_UP<<B_I2C_BTN_OFFSET)
@@ -51,22 +51,22 @@
   #define B_DW (BUTTON_DOWN<<B_I2C_BTN_OFFSET)
   #define B_RI (BUTTON_RIGHT<<B_I2C_BTN_OFFSET)
 
-  #if defined(BTN_ENC) && BTN_ENC > -1 
+  #if defined(BTN_ENC) && BTN_ENC > -1
     // the pause/stop/restart button is connected to BTN_ENC when used
-    #define B_ST (EN_C)                            // Map the pause/stop/resume button into its normalized functional name 
+    #define B_ST (EN_C)                            // Map the pause/stop/resume button into its normalized functional name
     #define LCD_CLICKED (buttons&(B_MI|B_RI|B_ST)) // pause/stop button also acts as click until we implement proper pause/stop.
   #else
     #define LCD_CLICKED (buttons&(B_MI|B_RI))
-  #endif  
+  #endif
 
   // I2C buttons take too long to read inside an interrupt context and so we read them during lcd_update
   #define LCD_HAS_SLOW_BUTTONS
 
 #elif defined(LCD_I2C_PANELOLU2)
   // encoder click can be read through I2C if not directly connected
-  #if BTN_ENC <= 0 
+  #if BTN_ENC <= 0
     #define B_I2C_BTN_OFFSET 3 // (the first three bit positions reserved for EN_A, EN_B, EN_C)
-  
+
     #define B_MI (PANELOLU2_ENCODER_C<<B_I2C_BTN_OFFSET) // requires LiquidTWI2 library v1.2.3 or later
 
     #define LCD_CLICKED (buttons&B_MI)
@@ -74,7 +74,7 @@
     // I2C buttons take too long to read inside an interrupt context and so we read them during lcd_update
     #define LCD_HAS_SLOW_BUTTONS
   #else
-    #define LCD_CLICKED (buttons&EN_C)  
+    #define LCD_CLICKED (buttons&EN_C)
   #endif
 
 #elif defined(REPRAPWORLD_KEYPAD)
@@ -87,7 +87,7 @@
     #define BLEN_REPRAPWORLD_KEYPAD_MIDDLE 5
     #define BLEN_REPRAPWORLD_KEYPAD_DOWN 6
     #define BLEN_REPRAPWORLD_KEYPAD_LEFT 7
-    
+
     #define REPRAPWORLD_BTN_OFFSET 3 // bit offset into buttons for shift register values
 
     #define EN_REPRAPWORLD_KEYPAD_F3 BIT((BLEN_REPRAPWORLD_KEYPAD_F3+REPRAPWORLD_BTN_OFFSET))
@@ -109,7 +109,7 @@
   #if HAS_BTN_BACK
     #define LCD_BACK_CLICKED (buttons&EN_D)
   #endif
-  
+
 #else // old style ULTIPANEL
   //bits in the shift register that carry the buttons for:
   // left up center down right red(stop)
@@ -127,7 +127,7 @@
   #define B_DW BIT(BL_DW)
   #define B_RI BIT(BL_RI)
   #define B_ST BIT(BL_ST)
-  
+
   #define LCD_CLICKED (buttons&(B_MI|B_ST))
 #endif
 
@@ -147,11 +147,11 @@
   #define LCD_I2C_PIN_D7  7
 
   #include <Wire.h>
-  #include <LCD.h>
-  #include <LiquidCrystal_I2C.h>
+  #include "LiquidCrystal/LCD.h"
+  #include "LiquidCrystal/LiquidCrystal_I2C.h"
   #define LCD_CLASS LiquidCrystal_I2C
   LCD_CLASS lcd(LCD_I2C_ADDRESS,LCD_I2C_PIN_EN,LCD_I2C_PIN_RW,LCD_I2C_PIN_RS,LCD_I2C_PIN_D4,LCD_I2C_PIN_D5,LCD_I2C_PIN_D6,LCD_I2C_PIN_D7);
-  
+
 #elif defined(LCD_I2C_TYPE_MCP23017)
   //for the LED indicators (which maybe mapped to different things in lcd_implementation_update_indicators())
   #define LED_A 0x04 //100
@@ -168,7 +168,7 @@
   #else
      LCD_CLASS lcd(LCD_I2C_ADDRESS);
   #endif
-  
+
 #elif defined(LCD_I2C_TYPE_MCP23008)
   #include <Wire.h>
   #include <LiquidTWI2.h>
@@ -180,21 +180,23 @@
   #endif
 
 #elif defined(LCD_I2C_TYPE_PCA8574)
-    #include <LiquidCrystal_I2C.h>
+    #include "LiquidCrystal/LiquidCrystal_I2C.h"
     #define LCD_CLASS LiquidCrystal_I2C
     LCD_CLASS lcd(LCD_I2C_ADDRESS, LCD_WIDTH, LCD_HEIGHT);
-    
+
 // 2 wire Non-latching LCD SR from:
-// https://bitbucket.org/fmalpartida/new-liquidcrystal/wiki/schematics#!shiftregister-connection 
+// https://bitbucket.org/fmalpartida/new-liquidcrystal/wiki/schematics#!shiftregister-connection
 #elif defined(SR_LCD_2W_NL)
-  extern "C" void __cxa_pure_virtual() { while (1); }
-  #include <LCD.h>
-  #include <LiquidCrystal_SR.h>
+  #if USE_CXA_PURE_VIRTUAL
+    extern "C" void __cxa_pure_virtual() { while (1); }
+  #endif
+  #include "LiquidCrystal/LCD.h"
+  #include "LiquidCrystal/LiquidCrystal_SR.h"
   #define LCD_CLASS LiquidCrystal_SR
   LCD_CLASS lcd(SR_DATA_PIN, SR_CLK_PIN);
 #else
   // Standard directly connected LCD implementations
-  #include <LiquidCrystal.h>
+  #include "LiquidCrystal/LiquidCrystal.h"
   #define LCD_CLASS LiquidCrystal
   LCD_CLASS lcd(LCD_PINS_RS, LCD_PINS_ENABLE, LCD_PINS_D4, LCD_PINS_D5,LCD_PINS_D6,LCD_PINS_D7);  //RS,Enable,D4,D5,D6,D7
 #endif
@@ -384,12 +386,12 @@ static void lcd_implementation_init(
     lcd.setBacklightPin(LCD_I2C_PIN_BL,POSITIVE);
     lcd.setBacklight(HIGH);
   #endif
-  
+
 #elif defined(LCD_I2C_TYPE_MCP23017)
     lcd.setMCPType(LTI_TYPE_MCP23017);
     lcd.begin(LCD_WIDTH, LCD_HEIGHT);
     lcd.setBacklight(0); //set all the LEDs off to begin with
-    
+
 #elif defined(LCD_I2C_TYPE_MCP23008)
     lcd.setMCPType(LTI_TYPE_MCP23008);
     lcd.begin(LCD_WIDTH, LCD_HEIGHT);
@@ -397,7 +399,7 @@ static void lcd_implementation_init(
 #elif defined(LCD_I2C_TYPE_PCA8574)
       lcd.init();
       lcd.backlight();
-    
+
 #else
   #if (LCD_PINS_RS != -1) && (LCD_PINS_ENABLE != -1)
       // required for RAMPS-FD, but does no harm for other targets
@@ -797,7 +799,7 @@ static void lcd_implementation_drawmenu_sddirectory(bool sel, uint8_t row, const
 
   static void lcd_implementation_update_indicators() {
     #if defined(LCD_I2C_PANELOLU2) || defined(LCD_I2C_VIKI)
-      //set the LEDS - referred to as backlights by the LiquidTWI2 library 
+      //set the LEDS - referred to as backlights by the LiquidTWI2 library
       static uint8_t ledsprev = 0;
       uint8_t leds = 0;
       if (target_temperature_bed > 0) leds |= LED_A;
@@ -824,7 +826,7 @@ static void lcd_implementation_drawmenu_sddirectory(bool sel, uint8_t row, const
       uint8_t slow_buttons;
       // Reading these buttons this is likely to be too slow to call inside interrupt context
       // so they are called during normal lcd_update
-      slow_buttons = lcd.readButtons() << B_I2C_BTN_OFFSET; 
+      slow_buttons = lcd.readButtons() << B_I2C_BTN_OFFSET;
       #ifdef LCD_I2C_VIKI
         if ((slow_buttons & (B_MI|B_RI)) && millis() < next_button_update_ms) // LCD clicked
           slow_buttons &= ~(B_MI|B_RI); // Disable LCD clicked buttons if screen is updated

@@ -1,6 +1,6 @@
 // Define this to set a custom name for your generic Mendel,
 // Displayed in the LCD "Ready" message
-#define CUSTOM_MACHINE_NAME "Prusa"
+#define CUSTOM_MACHINE_NAME "Metagross"
 
 //===========================================================================
 //=============================Mechanical Settings===========================
@@ -65,9 +65,9 @@
 #define INVERT_E3_DIR false
 
 // Travel limits after homing (units are in mm)
-#define X_MAX_POS 200
-#define X_MIN_POS 0
-#define Y_MAX_POS 200
+#define X_MAX_POS 167
+#define X_MIN_POS -5
+#define Y_MAX_POS 190
 #define Y_MIN_POS 0
 #define Z_MAX_POS 200
 #define Z_MIN_POS 0
@@ -165,7 +165,7 @@
   // WARNING: Setting the wrong pin may have unexpected and potentially disastrous outcomes. Use with caution and do your homework.
 
   //#define Z_PROBE_ENDSTOP
-  
+
 #endif // ENABLE_AUTO_BED_LEVELING
 
 
@@ -175,8 +175,8 @@
 
 //Manual homing switch locations:
 #ifdef MANUAL_HOME_POSITIONS
-  #define MANUAL_X_HOME_POS 0
-  #define MANUAL_Y_HOME_POS 0
+  #define MANUAL_X_HOME_POS -5
+  #define MANUAL_Y_HOME_POS -5
   #define MANUAL_Z_HOME_POS 0
 #endif
 
@@ -184,10 +184,10 @@
 #define HOMING_FEEDRATE {100*60, 100*60, 2*60, 0}      // set the homing speeds (mm/min)
 
 // default settings
-#define DEFAULT_AXIS_STEPS_PER_UNIT     {80,80,3200,625,625,625,625}       // X, Y, Z, E0, E1, E2, E3 default steps per unit
-#define DEFAULT_MAX_FEEDRATE            {300,300,2,100,100,100,100}        // X, Y, Z, E0, E1, E2, E3 (mm/sec)
-#define DEFAULT_RETRACTION_MAX_FEEDRATE {110,110,110,110}                  // E0, E1, E2, E3 (mm/sec)
-#define DEFAULT_MAX_ACCELERATION        {3000,3000,50,1000,1000,1000,1000} // X, Y, Z, E0, E1, E2, E3 maximum start speed for accelerated moves.
+#define DEFAULT_AXIS_STEPS_PER_UNIT     {160,160,12800.0/3.0,1280,320,625,625}       // X, Y, Z, E0, E1, E2, E3 default steps per unit
+#define DEFAULT_MAX_FEEDRATE            {150,200,5,30,30,100,100}        // X, Y, Z, E0, E1, E2, E3 (mm/sec)
+#define DEFAULT_RETRACTION_MAX_FEEDRATE {60,110,110,110}                  // E0, E1, E2, E3 (mm/sec)
+#define DEFAULT_MAX_ACCELERATION        {1500,6000,100,10000,10000,1000,1000} // X, Y, Z, E0, E1, E2, E3 maximum start speed for accelerated moves.
 
 #define DEFAULT_ACCELERATION          2500      // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION 10000      // E max acceleration in mm/s^2 for retracts
@@ -196,8 +196,8 @@
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
 // For the other hotends it is their distance from the extruder 0 hotend.
-//#define HOTEND_OFFSET_X {0.0, 5.00, 0.0, 0.0} // (in mm) for each extruder, offset of the hotend on the X axis
-//#define HOTEND_OFFSET_Y {0.0, 5.00, 0.0, 0.0} // (in mm) for each extruder, offset of the hotend on the Y axis
+#define HOTEND_OFFSET_X {0.0, 33.00, 0.0, 0.0} // (in mm) for each extruder, offset of the hotend on the X axis
+#define HOTEND_OFFSET_Y {0.0, 0.00, 0.0, 0.0} // (in mm) for each extruder, offset of the hotend on the Y axis
 
 // The speed change that does not require acceleration (i.e. the software might assume it can be done instantaneously)
 #define DEFAULT_XYJERK 10.0     // (mm/sec)

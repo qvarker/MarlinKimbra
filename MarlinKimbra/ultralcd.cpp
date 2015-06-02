@@ -81,7 +81,7 @@ static void lcd_status_screen();
     static void lcd_control_retract_menu();
   #endif
   static void lcd_sdcard_menu();
-  
+
   #ifdef DELTA
     static void lcd_delta_calibrate_menu();
   #endif // DELTA
@@ -338,7 +338,7 @@ static void lcd_status_screen() {
   #if HAS_LCD_POWER_SENSOR
     if (millis() > print_millis + 2000) print_millis = millis();
   #endif
-  
+
   #if HAS_LCD_FILAMENT_SENSOR || HAS_LCD_POWER_SENSOR
     #if HAS_LCD_FILAMENT_SENSOR && HAS_LCD_POWER_SENSOR
       if (millis() > previous_lcd_status_ms + 15000)
@@ -712,7 +712,7 @@ void lcd_cooldown() {
 void config_lcd_level_bed() {
 	setTargetHotend(0,0);
 
-	ECHO_EM("Leveling...");	
+	ECHO_EM("Leveling...");
 	currentMenu = lcd_level_bed;
 	enqueuecommands_P(PSTR("G28 M"));
 	pageShowInfo = 0;
@@ -747,19 +747,19 @@ void lcd_level_bed() {
         }
       break;
       case 3:
-        {  
+        {
           LCD_Printpos(0, 1);
           lcd_printPGM(PSTR(MSG_LP_3));
           currentMenu = lcd_level_bed;
           ChangeScreen=false;
         }
-      break;        
+      break;
       case 4:
         {
           LCD_Printpos(0, 1);
           lcd_printPGM(PSTR(MSG_LP_4));
           currentMenu = lcd_level_bed;
-          ChangeScreen=false; 
+          ChangeScreen=false;
         }
       break;
       case 5:
@@ -795,7 +795,7 @@ void lcd_level_bed() {
 
 static void lcd_prepare_menu() {
   START_MENU(lcd_main_menu);
-  
+
   //
   // ^ Main
   //
@@ -814,11 +814,11 @@ static void lcd_prepare_menu() {
   //
   MENU_ITEM(function, MSG_SET_HOME_OFFSETS, lcd_set_home_offsets);
   //MENU_ITEM(gcode, MSG_SET_ORIGIN, PSTR("G92 X0 Y0 Z0"));
-  
+
   //Add Preset menu for LASER setting '14. 7. 22
   #ifdef LASERBEAM
     MENU_ITEM_EDIT(int3, MSG_LASER, &laser_ttl_modulation, 0, 255);
-    if(laser_ttl_modulation == 0) { 
+    if(laser_ttl_modulation == 0) {
       WRITE(LASER_PWR_PIN, LOW);
     }
     else {
@@ -871,12 +871,12 @@ static void lcd_prepare_menu() {
   //
   // Easy Load
   //
-  #if defined(EASY_LOAD) 
+  #if defined(EASY_LOAD)
     MENU_ITEM(function, MSG_E_BOWDEN_LENGTH, lcd_easy_load);
     MENU_ITEM(function, MSG_R_BOWDEN_LENGTH, lcd_easy_unload);
     MENU_ITEM(function, MSG_PURGE_XMM, lcd_purge);
     MENU_ITEM(function, MSG_RETRACT_XMM, lcd_retract);
-  #endif // EASY_LOAD 
+  #endif // EASY_LOAD
 
   //
   // Switch power on/off
@@ -1247,12 +1247,12 @@ static void lcd_control_motion_menu() {
   MENU_ITEM_EDIT(float52, MSG_YSTEPS, &axis_steps_per_unit[Y_AXIS], 5, 9999);
   MENU_ITEM_EDIT(float51, MSG_ZSTEPS, &axis_steps_per_unit[Z_AXIS], 5, 9999);
   MENU_ITEM_EDIT(float51, MSG_E0STEPS, &axis_steps_per_unit[E_AXIS+0], 5, 9999);
-  #if EXTRUDERS > 1 
+  #if EXTRUDERS > 1
     MENU_ITEM_EDIT(float51, MSG_E1STEPS, &axis_steps_per_unit[E_AXIS+1], 5, 9999);
-  #endif 
+  #endif
   #if EXTRUDERS > 2
     MENU_ITEM_EDIT(float51, MSG_E2STEPS, &axis_steps_per_unit[E_AXIS+2], 5, 9999);
-  #endif 
+  #endif
   #if EXTRUDERS > 3
     MENU_ITEM_EDIT(float51, MSG_E3STEPS, &axis_steps_per_unit[E_AXIS+3], 5, 9999);
   #endif
@@ -1494,14 +1494,14 @@ menu_edit_type(unsigned long, long5, ftostr5, 0.01)
 void lcd_quick_feedback() {
   lcdDrawUpdate = 2;
   next_button_update_ms = millis() + 500;
-    
+
   #ifdef LCD_USE_I2C_BUZZER
     #ifndef LCD_FEEDBACK_FREQUENCY_HZ
       #define LCD_FEEDBACK_FREQUENCY_HZ 100
     #endif
     #ifndef LCD_FEEDBACK_FREQUENCY_DURATION_MS
       #define LCD_FEEDBACK_FREQUENCY_DURATION_MS (1000/6)
-    #endif    
+    #endif
     lcd_buzz(LCD_FEEDBACK_FREQUENCY_DURATION_MS, LCD_FEEDBACK_FREQUENCY_HZ);
   #elif defined(BEEPER) && BEEPER > -1
     #ifndef LCD_FEEDBACK_FREQUENCY_HZ
@@ -1664,7 +1664,7 @@ void lcd_update() {
       }
     }
   #endif//CARDINSERTED
-  
+
   millis_t ms = millis();
   if (ms > next_lcd_update_ms) {
 
@@ -1691,7 +1691,7 @@ void lcd_update() {
               int32_t encoderMovementSteps = abs(encoderDiff) / ENCODER_PULSES_PER_STEP;
 
               if (lastEncoderMovementMillis != 0) {
-                // Note that the rate is always calculated between to passes through the 
+                // Note that the rate is always calculated between to passes through the
                 // loop and that the abs of the encoderDiff value is tracked.
                 float encoderStepRate = (float)(encoderMovementSteps) / ((float)(ms - lastEncoderMovementMillis)) * 1000.0;
 
@@ -1840,7 +1840,7 @@ void lcd_reset_alert_level() { lcd_status_message_level = 0; }
     #define encrot1 2
     #define encrot2 3
     #define encrot3 1
-  #endif 
+  #endif
 
   /**
    * Read encoder buttons from the hardware registers
@@ -2029,7 +2029,7 @@ char *ftostr43(const float &x) {
 // Convert float to string with 1.23 format
 char *ftostr12ns(const float &x) {
   long xx=x*100;
-  
+
   xx=abs(xx);
   conv[0]=(xx/100)%10+'0';
   conv[1]='.';

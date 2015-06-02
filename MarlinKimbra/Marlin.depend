@@ -1,0 +1,571 @@
+# depslib dependency file v1.0
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\blinkm.cpp
+	"Marlin.h"
+	"blinkm.h"
+
+1433246587 c:\datos\github\marlinkimbra\marlinkimbra\marlin.h
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<inttypes.h>
+	"HAL.h"
+	<util/delay.h>
+	<avr/eeprom.h>
+	"fastio.h"
+	<avr/pgmspace.h>
+	<avr/interrupt.h>
+	"Configuration.h"
+	"Arduino.h"
+	"WProgram.h"
+	"comunication.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\fastio.h
+	<avr/io.h>
+
+1433246737 c:\datos\github\marlinkimbra\marlinkimbra\configuration.h
+	"boards.h"
+	"Configuration_Cartesian.h"
+	"Configuration_Corexy.h"
+	"Configuration_Delta.h"
+	"Configuration_Scara.h"
+	"Configuration_adv.h"
+	"thermistortables.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\boards.h
+
+1433249618 c:\datos\github\marlinkimbra\marlinkimbra\configuration_cartesian.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\configuration_corexy.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\configuration_delta.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\configuration_scara.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\configuration_adv.h
+	"conditionals.h"
+	"conditionals.h"
+	"sanitycheck.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\conditionals.h
+	"Arduino.h"
+	"WProgram.h"
+	"pins.h"
+
+1371036702 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\arduino.h
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<avr/pgmspace.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	"binary.h"
+	"WCharacter.h"
+	"WString.h"
+	"HardwareSerial.h"
+	"pins_arduino.h"
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\binary.h
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\wcharacter.h
+	<ctype.h>
+
+1371036734 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\wstring.h
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<avr/pgmspace.h>
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\hardwareserial.h
+	<inttypes.h>
+	"Stream.h"
+	"USBAPI.h"
+
+1371036430 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\stream.h
+	<inttypes.h>
+	"Print.h"
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\print.h
+	<inttypes.h>
+	<stdio.h>
+	"WString.h"
+	"Printable.h"
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\printable.h
+	<new.h>
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\new.h
+	<stdlib.h>
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\usbapi.h
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\variants\mega\pins_arduino.h
+	<avr/pgmspace.h>
+
+1433248750 c:\datos\github\marlinkimbra\marlinkimbra\pins.h
+	"boards.h"
+	"pins2tool.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\pins2tool.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\sanitycheck.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\thermistortables.h
+	"Marlin.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\comunication.h
+	"HardwareSerial.h"
+	"MarlinSerial.h"
+	"WString.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\marlinserial.h
+	"Marlin.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\blinkm.h
+	"Arduino.h"
+	"WProgram.h"
+	"Wire.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\cardreader.cpp
+	"Marlin.h"
+	"cardreader.h"
+	"ultralcd.h"
+	"stepper.h"
+	"temperature.h"
+	"language.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\cardreader.h
+	"SdFile.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\sdfile.h
+	"Marlin.h"
+	"SdBaseFile.h"
+	<Print.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\sdbasefile.h
+	"Marlin.h"
+	"Marlin.h"
+	"SdFatConfig.h"
+	"SdVolume.h"
+
+1433247802 c:\datos\github\marlinkimbra\marlinkimbra\sdfatconfig.h
+	"Marlin.h"
+	<stdint.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\sdvolume.h
+	"Marlin.h"
+	"SdFatConfig.h"
+	"Sd2Card.h"
+	"SdFatStructs.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\sd2card.h
+	"Marlin.h"
+	"SdFatConfig.h"
+	"Sd2PinMap.h"
+	"SdInfo.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\sd2pinmap.h
+	"Marlin.h"
+	<avr/io.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\sdinfo.h
+	"Marlin.h"
+	<stdint.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\sdfatstructs.h
+	"Marlin.h"
+
+1433247707 c:\datos\github\marlinkimbra\marlinkimbra\ultralcd.h
+	"Marlin.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\stepper.h
+	"planner.h"
+	"stepper_indirection.h"
+	"external_dac.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\planner.h
+	"Marlin.h"
+	"vector_3.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\vector_3.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\stepper_indirection.h
+	<SPI.h>
+	<TMC26XStepper.h>
+	<SPI.h>
+	<L6470.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\temperature.h
+	"Marlin.h"
+	"planner.h"
+	"stepper.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language.h
+	"Configuration.h"
+	"language_en.h"
+	"language_pl.h"
+	"language_fr.h"
+	"language_de.h"
+	"language_es.h"
+	"language_ru.h"
+	"language_it.h"
+	"language_pt.h"
+	"language_fi.h"
+	"language_an.h"
+	"language_nl.h"
+	"language_ca.h"
+	"language_eu.h"
+	"language_pt-br.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_en.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_pl.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_fr.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_de.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_es.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_ru.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_it.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_pt.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_fi.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_an.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_nl.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_ca.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_eu.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\language_pt-br.h
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\configuration_store.cpp
+	"Marlin.h"
+	"language.h"
+	"planner.h"
+	"temperature.h"
+	"ultralcd.h"
+	"configuration_store.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\configuration_store.h
+	"Configuration.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\digipot_mcp4451.cpp
+	"Configuration.h"
+	"Stream.h"
+	"utility/twi.h"
+	"Wire.h"
+
+1333649994 source:c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\fastio.cpp
+	"FastIO.h"
+
+1333649994 c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\fastio.h
+	<WProgram.h>
+	<Arduino.h>
+	<pins_arduino.h>
+	<inttypes.h>
+	<util/atomic.h>
+
+1333649994 source:c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\i2cio.cpp
+	<WProgram.h>
+	<Arduino.h>
+	<inttypes.h>
+	<../Wire/Wire.h>
+	"I2CIO.h"
+
+1333649994 c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\i2cio.h
+	<inttypes.h>
+
+1333649994 source:c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\lcd.cpp
+	<stdio.h>
+	<string.h>
+	<inttypes.h>
+	<WProgram.h>
+	<Arduino.h>
+	"LCD.h"
+
+1333649994 c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\lcd.h
+	<WProgram.h>
+	<Arduino.h>
+	<inttypes.h>
+	<Print.h>
+
+1333649994 source:c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\liquidcrystal.cpp
+	<stdio.h>
+	<string.h>
+	<inttypes.h>
+	<WProgram.h>
+	<Arduino.h>
+	"LiquidCrystal.h"
+
+1333649994 c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\liquidcrystal.h
+	<inttypes.h>
+	"LCD.h"
+	"FastIO.h"
+
+1333649994 source:c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\liquidcrystal_i2c.cpp
+	<WProgram.h>
+	<Arduino.h>
+	<inttypes.h>
+	"I2CIO.h"
+	"LiquidCrystal_I2C.h"
+
+1333649994 c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\liquidcrystal_i2c.h
+	<inttypes.h>
+	<Print.h>
+	"I2CIO.h"
+	"LCD.h"
+
+1333649994 source:c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\liquidcrystal_sr.cpp
+	<stdio.h>
+	<string.h>
+	<inttypes.h>
+	<WProgram.h>
+	<Arduino.h>
+	"LiquidCrystal_SR.h"
+	"FastIO.h"
+
+1333649994 c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\liquidcrystal_sr.h
+	<inttypes.h>
+	"LCD.h"
+	"FastIO.h"
+
+1333649994 source:c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\liquidcrystal_sr2w.cpp
+	"LiquidCrystal_SR2W.h"
+
+1333649994 c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\liquidcrystal_sr2w.h
+	<inttypes.h>
+	"LCD.h"
+	"FastIO.h"
+
+1333649994 source:c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\liquidcrystal_sr3w.cpp
+	<stdio.h>
+	<string.h>
+	<inttypes.h>
+	<WProgram.h>
+	<Arduino.h>
+	"LiquidCrystal_SR3W.h"
+	"FastIO.h"
+
+1333649994 c:\datos\github\marlinkimbra\marlinkimbra\liquidcrystal\liquidcrystal_sr3w.h
+	<inttypes.h>
+	"LCD.h"
+	"FastIO.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\marlin_main.cpp
+	"Marlin.h"
+	"vector_3.h"
+	"qr_solve.h"
+	"ultralcd.h"
+	"planner.h"
+	"stepper.h"
+	"temperature.h"
+	"motion_control.h"
+	"cardreader.h"
+	"watchdog.h"
+	"configuration_store.h"
+	"language.h"
+	"pins_arduino.h"
+	"math.h"
+	"blinkm.h"
+	"Wire.h"
+	"servo.h"
+	<SPI.h>
+	"firmware_test.h"
+	"SdFatUtil.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\qr_solve.h
+	"Configuration.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\motion_control.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\watchdog.h
+	"Marlin.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\servo.h
+	<inttypes.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\firmware_test.h
+	"Marlin.h"
+	"stepper.h"
+	"planner.h"
+	"temperature.h"
+	"language.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\sdfatutil.h
+	"Marlin.h"
+	"Marlin.h"
+	"MarlinSerial.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\marlinserial.cpp
+	"Marlin.h"
+	"MarlinSerial.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\motion_control.cpp
+	"Marlin.h"
+	"stepper.h"
+	"planner.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\planner.cpp
+	"Marlin.h"
+	"planner.h"
+	"stepper.h"
+	"temperature.h"
+	"ultralcd.h"
+	"language.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\qr_solve.cpp
+	"qr_solve.h"
+	<stdlib.h>
+	<math.h>
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\sd2card.cpp
+	"Marlin.h"
+	"Sd2Card.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\sdbasefile.cpp
+	"Marlin.h"
+	"SdBaseFile.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\sdfatutil.cpp
+	"Marlin.h"
+	"SdFatUtil.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\sdfile.cpp
+	"Marlin.h"
+	"SdFile.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\sdvolume.cpp
+	"Marlin.h"
+	"SdVolume.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\servo.cpp
+	"Configuration.h"
+	<avr/interrupt.h>
+	<Arduino.h>
+	"servo.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\stepper.cpp
+	"Marlin.h"
+	"stepper.h"
+	"planner.h"
+	"temperature.h"
+	"ultralcd.h"
+	"language.h"
+	"cardreader.h"
+	"speed_lookuptable.h"
+	<SPI.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\speed_lookuptable.h
+	"Marlin.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\stepper_indirection.cpp
+	"stepper_indirection.h"
+	"Configuration.h"
+	<SPI.h>
+	<TMC26XStepper.h>
+	<SPI.h>
+	<L6470.h>
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\temperature.cpp
+	"Marlin.h"
+	"ultralcd.h"
+	"temperature.h"
+	"watchdog.h"
+	"language.h"
+	"Sd2PinMap.h"
+
+1433247802 source:c:\datos\github\marlinkimbra\marlinkimbra\ultralcd.cpp
+	"ultralcd.h"
+	"Marlin.h"
+	"language.h"
+	"cardreader.h"
+	"temperature.h"
+	"stepper.h"
+	"configuration_store.h"
+	"dogm_lcd_implementation.h"
+	"ultralcd_implementation_hitachi_HD44780.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\dogm_lcd_implementation.h
+	<U8glib.h>
+	"dogm_bitmaps.h"
+	"ultralcd.h"
+	"ultralcd_st7920_u8glib_rrd.h"
+	"Configuration.h"
+	"dogm_font_data_6x9_marlin.h"
+	"dogm_font_data_Marlin_symbols.h"
+	"dogm_font_data_ISO10646_1.h"
+	"dogm_font_data_ISO10646_5_Cyrillic.h"
+	"dogm_font_data_ISO10646_Kana.h"
+	"dogm_font_data_ISO10646_CN.h"
+	"dogm_font_data_ISO10646_1.h"
+	"dogm_font_data_HD44780_J.h"
+	"dogm_font_data_HD44780_W.h"
+	"dogm_font_data_HD44780_C.h"
+	"dogm_font_data_ISO10646_1.h"
+	"utf_mapper.h"
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\dogm_bitmaps.h
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\ultralcd_st7920_u8glib_rrd.h
+	"Marlin.h"
+	<U8glib.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\dogm_font_data_6x9_marlin.h
+	<utility/u8g.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\dogm_font_data_marlin_symbols.h
+	<utility/u8g.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\dogm_font_data_iso10646_1.h
+	<utility/u8g.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\dogm_font_data_iso10646_5_cyrillic.h
+	<utility/u8g.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\dogm_font_data_iso10646_kana.h
+	<utility/u8g.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\dogm_font_data_hd44780_j.h
+	<utility/u8g.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\dogm_font_data_hd44780_w.h
+	<utility/u8g.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\dogm_font_data_hd44780_c.h
+	<utility/u8g.h>
+
+1432858103 c:\datos\github\marlinkimbra\marlinkimbra\utf_mapper.h
+	"language.h"
+
+1433248411 c:\datos\github\marlinkimbra\marlinkimbra\ultralcd_implementation_hitachi_hd44780.h
+	<Wire.h>
+	"LiquidCrystal/LCD.h"
+	"LiquidCrystal/LiquidCrystal_I2C.h"
+	<Wire.h>
+	<LiquidTWI2.h>
+	<Wire.h>
+	<LiquidTWI2.h>
+	"LiquidCrystal/LiquidCrystal_I2C.h"
+	"LiquidCrystal/LCD.h"
+	"LiquidCrystal/LiquidCrystal_SR.h"
+	"LiquidCrystal/LiquidCrystal.h"
+	"utf_mapper.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\vector_3.cpp
+	<math.h>
+	"Marlin.h"
+	"vector_3.h"
+
+1432858103 source:c:\datos\github\marlinkimbra\marlinkimbra\watchdog.cpp
+	"Marlin.h"
+	<avr/wdt.h>
+	"watchdog.h"
+	"ultralcd.h"
+

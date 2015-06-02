@@ -15,7 +15,7 @@
 // Either an numeric ID or name defined in boards.h is valid.
 // See: https://github.com/MagoKimbra/MarlinKimbra/blob/master/Documentation/Hardware.md
 
-#define MOTHERBOARD BOARD_RAMPS_13_EFB
+#define MOTHERBOARD BOARD_MEGATRONICS_3
 
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
@@ -34,7 +34,7 @@
 
 // This determines the communication speed of the printer
 // 115200 - 250000
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 
 // This enables the serial port associated to the Bluetooth interface on AT90USB devices
 //#define BTENABLED
@@ -70,10 +70,10 @@
 /***********************************************************************/
 
 // This defines the number of extruder real or virtual
-#define EXTRUDERS 1
+#define EXTRUDERS 2
 
 // This defines the number of Driver extruder you have and use
-#define DRIVER_EXTRUDERS 1
+#define DRIVER_EXTRUDERS 2
 
 // This is used for single nozzle and multiple extrusion configuration
 // Uncomment below to enable (One Hotend)
@@ -102,9 +102,9 @@
 //#define NPR2
 
 #define COLOR_STEP {120,25,-65,-155} // CARTER ANGLE
-#define COLOR_SLOWRATE 170           // MICROSECOND delay for carter motor routine (Carter Motor Feedrate: upper value-slow feedrate)  
+#define COLOR_SLOWRATE 170           // MICROSECOND delay for carter motor routine (Carter Motor Feedrate: upper value-slow feedrate)
 #define COLOR_HOMERATE 4             // FEEDRATE for carter home
-#define MOTOR_ANGLE 1.8              // Nema angle for single step 
+#define MOTOR_ANGLE 1.8              // Nema angle for single step
 #define DRIVER_MICROSTEP 4           // Microstep moltiplicator driver (set jumper MS1-2-3) off-on-off 1/4 microstepping.
 #define CARTER_MOLTIPLICATOR 14.22   // CARTER MOLTIPLICATOR (gear ratio 13/31-10/31)
 //**********************************************************************
@@ -158,16 +158,16 @@
 // 1010 is Pt1000 with 1k pullup (non standard)
 // 147 is Pt100 with 4k7 pullup
 // 110 is Pt100 with 1k pullup (non standard)
-// 998 and 999 are Dummy Tables. They will ALWAYS read 25°C or the temperature defined below. 
+// 998 and 999 are Dummy Tables. They will ALWAYS read 25°C or the temperature defined below.
 //     Use it for Testing or Development purposes. NEVER for production machine.
 //     #define DUMMY_THERMISTOR_998_VALUE 25
 //     #define DUMMY_THERMISTOR_999_VALUE 100
 
-#define TEMP_SENSOR_0 1
-#define TEMP_SENSOR_1 0
+#define TEMP_SENSOR_0 5
+#define TEMP_SENSOR_1 5
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
-#define TEMP_SENSOR_BED 1
+#define TEMP_SENSOR_BED 10
 
 // This makes temp sensor 1 a redundant sensor for sensor 0. If the temperatures difference between these sensors is to high the print will be aborted.
 //#define TEMP_SENSOR_1_AS_REDUNDANT
@@ -190,8 +190,8 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 275 // (degC)
-#define HEATER_1_MAXTEMP 275 // (degC)
+#define HEATER_0_MAXTEMP 306 // (degC)
+#define HEATER_1_MAXTEMP 306 // (degC)
 #define HEATER_2_MAXTEMP 275 // (degC)
 #define HEATER_3_MAXTEMP 275 // (degC)
 #define BED_MAXTEMP      150 // (degC)
@@ -390,7 +390,7 @@
 // 2 wire Non-latching LCD SR from:
 // https://bitbucket.org/fmalpartida/new-liquidcrystal/wiki/schematics#!shiftregister-connection
 
-//#define SAV_3DLCD
+#define SAV_3DLCD
 
 // option for invert rotary switch
 //#define INVERT_ROTARY_SWITCH
@@ -427,7 +427,7 @@
 // 13 Basque-Euskera
 // 14 Portuguese (Brazil)
 
-#define LANGUAGE_CHOICE 7
+#define LANGUAGE_CHOICE 1
 
 
 //===========================================================================
@@ -440,8 +440,8 @@
 // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //define this to enable EEPROM support
-//#define EEPROM_SETTINGS
-//#define EEPROM_CHITCHAT
+#define EEPROM_SETTINGS
+#define EEPROM_CHITCHAT
 // to disable EEPROM Serial responses and decrease program space by ~1700 byte: comment this out:
 // please keep turned on if you can.
 //#define DISABLE_M503
@@ -462,13 +462,13 @@
 
 
 //====================== Preheat Constants ==================================
-#define PLA_PREHEAT_HOTEND_TEMP 190
+#define PLA_PREHEAT_HOTEND_TEMP 200
 #define PLA_PREHEAT_HPB_TEMP 60
 #define PLA_PREHEAT_FAN_SPEED 255   // Insert Value between 0 and 255
 
 #define ABS_PREHEAT_HOTEND_TEMP 240
 #define ABS_PREHEAT_HPB_TEMP 100
-#define ABS_PREHEAT_FAN_SPEED 255   // Insert Value between 0 and 255
+#define ABS_PREHEAT_FAN_SPEED 0   // Insert Value between 0 and 255
 
 #define GUM_PREHEAT_HOTEND_TEMP 230
 #define GUM_PREHEAT_HPB_TEMP 60
@@ -496,9 +496,9 @@
  * Support for a filament diameter sensor
  * Also allows adjustment of diameter at print time (vs  at slicing)
  * Single extruder only at this point (extruder 0)
- * 
+ *
  * Motherboards
- * 34 - RAMPS1.4 - uses Analog input 5 on the AUX2 connector 
+ * 34 - RAMPS1.4 - uses Analog input 5 on the AUX2 connector
  * 81 - Printrboard - Uses Analog input 2 on the Exp1 connector (version B,C,D,E)
  * 301 - Rambo  - uses Analog input 3
  * Note may require analog pins to be defined for different motherboards
